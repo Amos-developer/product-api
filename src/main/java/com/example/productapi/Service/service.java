@@ -1,2 +1,5 @@
-package com.example.productapi.Service;public interface service {
+package com.example.productapi.Service;
+
+public interface service {
+
 }
