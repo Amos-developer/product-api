@@ -1,11 +1,12 @@
 package com.example.productapi.Entity;
 
+import com.example.productapi.Service.ProductService;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
 
 @Entity
-public class Product {
+public class Product implements ProductService {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,12 +44,5 @@ public class Product {
     public Long getId() {
         return id;
     }
-
-
-
-
-
-
-
 
 }
