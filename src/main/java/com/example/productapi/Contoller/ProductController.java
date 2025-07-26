@@ -1,5 +1,4 @@
 package com.example.productapi.Contoller;
-
 import com.example.productapi.Entity.Product;
 import com.example.productapi.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +37,5 @@ public class ProductController {
     public void delete(@PathVariable Long id){
         productService.deleteProduct(id);
     }
-
+    
 }
