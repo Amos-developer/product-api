@@ -27,15 +27,12 @@ public class ProductImplementation implements ProductService {
 
     @Override
     public Product getProductById(Long id) {
-        return repository.findById(id).orElseThrow(
-                ()-> new RuntimeException('Product not found')
-        );
+        return repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
     }
 
     @Override
     public Product updateProduct(Long id, Product product) {
-        Product existing = repository.findById().orElseThrow(()
-        -> RuntimeException('Product not found'));
+        Product existing = repository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
 
         existing.setName(product.getName());
         existing.setPrice(product.getPrice());
@@ -46,6 +43,6 @@ public class ProductImplementation implements ProductService {
 
     @Override
     public void deleteProduct(Long id) {
-        return repository.deleteById(id);
+        repository.deleteById(id);
     }
 }
